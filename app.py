@@ -21,7 +21,7 @@ def webhook():
     try:
         if payload["action"] == "created":
             # Delay needed for server to be create the page, otherwise a 404 returns
-            time.sleep(1)
+            #time.sleep(1) # commenting this for now looks like some tests are working without this sleep
             # Create branch protection for the main branch of the repo
             branch_protection = {
                 "required_status_checks": {"strict": True, "contexts": ["default"]},
@@ -34,8 +34,13 @@ def webhook():
 
             session = requests.session()
             session.auth = (user, cred)
+            subdomain="https://api.github.com/repos/"
+            print("DEBUG subdomain:",subdomain)
+            print("DEBUG: fullname:", payload["repository"]["full_name"],)
+            
+            
             response_1 = session.put(
-                payload["repository"]["url"] + "/branches/main/protection",
+                subdomain + payload["repository"]["full_name"] +"/branches/main/protection",
                 json.dumps(branch_protection),
             )
             if response_1.status_code == 200:

@@ -28,5 +28,22 @@ When the repository is created this web service automates the protection of the 
         - Issues
         - Repositories
         - Repositories imports
-    - Check the Active
-    - Note that every time ngrok is restarted a new url will be created and updating the webhook url is required
+    - Makesure the Webhook is set to 'Active' by ticking the checkbox and save.
+- Note that every time ngrok is restarted a new url will be created and updating the webhook url is required
+- Create a new repository:
+    - Make sure the repo is public to enable protection for a GitHub free plan
+    - Add at least a Readme file so that the repo isn't empty and there is main branch
+- Verify that the [branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule), and a new [issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) were created as needed.
+- Troubleshooting and debugging could be done by setting up the following variable before running the webservice: `FLASK_DEBUG=1`
+
+## Resources and attributions:
+- The code in this repo is based on the [following archived repo](https://github.com/zkoppert/Auto-branch-protect/blob/main/README.md)
+- Another great resource to get familiar with webhooks and rest is the [following workshop](https://github.com/githubsatelliteworkshops/webhooks-with-rest)
+- [GithHub REST API documentation](https://docs.github.com/en/rest?apiVersion=2022-11-28)
+    - [Branch Protection](https://docs.github.com/en/rest/branches/branch-protection?apiVersion=2022-11-28)
+    - [Create an Issue](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue)
+    - [Delete Repository](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue) - used for cleaning up the test repos
+- There is the following [postman collection](https://github.com/nir-gh-explore/GH-PostmanCollection) that was created to explore the 3 APIs above
+
+#Future Improvements:
+- implement a secret for the webhook and support it via the webservice

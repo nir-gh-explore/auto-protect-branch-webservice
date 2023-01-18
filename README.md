@@ -37,8 +37,12 @@ When the repository is created this web service automates the protection of the 
 - Troubleshooting and debugging could be done by setting up the following variable before running the webservice: `FLASK_DEBUG=1`
 
 ## Resources and attributions:
-- The code in this repo is based on the [following archived repo](https://github.com/zkoppert/Auto-branch-protect/blob/main/README.md)
-- Another great resource to get familiar with webhooks and rest is the [following workshop](https://github.com/githubsatelliteworkshops/webhooks-with-rest)
+- The code in this repo is based on the [following archived repo](https://github.com/zkoppert/Auto-branch-protect/blob/main/README.md) with some improvements:
+    - Some of the dependencies in the Setup required update as there were conflicts
+    - Dependabot and CodeQL scanning were enabled and the security issues that were detected are now remidiated
+    - Performance and documentation improvements
+    - Replaced the `.gitignore` file with a more robust file generated automatically by GitHub
+- A great resource to get familiar with webhooks and rest is the [following workshop](https://github.com/githubsatelliteworkshops/webhooks-with-rest)
 - [GithHub REST API documentation](https://docs.github.com/en/rest?apiVersion=2022-11-28)
     - [Branch Protection](https://docs.github.com/en/rest/branches/branch-protection?apiVersion=2022-11-28)
     - [Create an Issue](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue)
@@ -47,3 +51,5 @@ When the repository is created this web service automates the protection of the 
 
 #Future Improvements:
 - implement a secret for the webhook and support it via the webservice
+- As demonstrated in [this commit](https://github.com/nir-gh-explore/auto-protect-branch-webservice/commit/c422b305c6c7764a0b0b6a650acddfe91ca8bcf5) the way that the branch protection url is constructed following this commit fixes the SSRF security issue for the first API. The same pattern could be applied to fix the issue creation API call as it's currently vulnarable to SSRF
+- An alternative solution may be implementing similar functionality using a [templated GitHub Action](https://github.com/orgs/community/discussions/25748)

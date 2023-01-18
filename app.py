@@ -12,8 +12,8 @@ app = Flask(__name__)
 def webhook():
     # Store incoming json data from webhook
     payload = request.get_json()
-    user = "zkoppert"
-    cred = os.environ["GH_TOKEN"]
+
+    
     if payload is None:
         print("POST was not formatted in JSON")
 
@@ -22,17 +22,20 @@ def webhook():
         if payload["action"] == "created":
             # Delay needed for server to be create the page, otherwise a 404 returns
             time.sleep(1)
-            # Create branch protection for the master branch of the repo
+            # Create branch protection for the main branch of the repo
             branch_protection = {
                 "required_status_checks": {"strict": True, "contexts": ["default"]},
                 "enforce_admins": False,
                 "required_pull_request_reviews": None,
                 "restrictions": None,
             }
+            user = os.environ["GH_USER"]
+            cred = os.environ["GH_TOKEN"]
+
             session = requests.session()
             session.auth = (user, cred)
             response_1 = session.put(
-                payload["repository"]["url"] + "/branches/master/protection",
+                payload["repository"]["url"] + "/branches/main/protection",
                 json.dumps(branch_protection),
             )
             if response_1.status_code == 200:

@@ -53,6 +53,6 @@ Make sure the token scopes with the minimum required permissions (repo)
 - There is the following [postman collection](https://github.com/nir-gh-explore/GH-PostmanCollection) that was created to explore the 3 APIs above
 
 ## Future Improvements:
-- implement a secret for the webhook and support it via the webservice
+- Implement a secret for the webhook and support it via the webservice
 - As demonstrated in [this commit](https://github.com/nir-gh-explore/auto-protect-branch-webservice/commit/c422b305c6c7764a0b0b6a650acddfe91ca8bcf5) the way that the branch protection url is constructed following this commit fixes the SSRF security issue for the first API. The same pattern could be applied to fix the issue creation API call as it's currently vulnarable to SSRF
 - An alternative solution may be implementing similar functionality using a [templated GitHub Action](https://github.com/orgs/community/discussions/25748)

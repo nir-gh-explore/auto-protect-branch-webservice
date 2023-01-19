@@ -30,7 +30,7 @@ def webhook():
                 "restrictions": None,
             }
             user = os.environ["GH_USER"]
-            cred = os.environ["GH_TOKEN"] #testing a 'mistakenly' committed secret for GHAS secret scanning testing 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
+            cred = os.environ["GH_TOKEN"] #testing a 'mistakenly' committed secret for GHAS secret scanning testing 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
 
             session = requests.session()
             session.auth = (user, cred)

@@ -42,7 +42,9 @@ When the repository is created this web service automates the protection of the 
     - Dependabot and CodeQL scanning were enabled and the security issues that were detected are now remidiated
     - Performance and documentation improvements
     - Replaced the `.gitignore` file with a more robust file generated automatically by GitHub
-- A great resource to get familiar with webhooks and rest is the [following workshop](https://github.com/githubsatelliteworkshops/webhooks-with-rest)
+- A couple of great resources to get familiar with webhooks and REST are
+    - The [following workshop](https://github.com/githubsatelliteworkshops/webhooks-with-rest)
+    - There is a live webinar which walks through [here](https://www.youtube.com/watch?v=wcxOJq9YemE)
 - [GithHub REST API documentation](https://docs.github.com/en/rest?apiVersion=2022-11-28)
     - [Branch Protection](https://docs.github.com/en/rest/branches/branch-protection?apiVersion=2022-11-28)
     - [Create an Issue](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue)

@@ -18,7 +18,7 @@ Make sure the token scopes with the minimum required permissions (repo)
 
 
 ## Running the webservice:
-- Start the local web service via `flask run --host=0.0.0.0 --port=<port>` in case `--port` isn't used the default port is 5000
+- Start the local web service via `flask run --host=0.0.0.0 --port=<port>` in case `--port` isn't used the default port is `5000`
 - Start forwarding the service via `./ngrok http <port>` in case `--port` in the command above wasn't used run: `./ngrok http 5000 `. Take note of the url returned by ngrok for the next step.
 - Create new [Webhook](https://docs.github.com/en/developers/webhooks-and-events/webhooks/about-webhooks) on the organisation level as follow:
     - Payload URL: the url returned by ngrok

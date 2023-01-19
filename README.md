@@ -12,7 +12,8 @@ When the repository is created this web service automates the protection of the 
 
 - Set the following environment variables:
     - GH_USER with the value of the username which the service would be using to call the API's for branch protection and the issue
-    - GH_TOKEN  with a value that corresponds to a [GitHub Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).Make sure the token scopes with the minimum required permissions (repo)
+    - GH_TOKEN  with a value that corresponds to a [GitHub Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+Make sure the token scopes with the minimum required permissions (repo)
 
 
 
@@ -28,7 +29,7 @@ When the repository is created this web service automates the protection of the 
         - Issues
         - Repositories
         - Repositories imports
-    - Makesure the Webhook is set to 'Active' by ticking the checkbox and save.
+    - Make sure the Webhook is set to 'Active' by ticking the checkbox and save.
 - Note that every time ngrok is restarted a new url will be created and updating the webhook url is required
 - Create a new repository:
     - Make sure the repo is public to enable protection for a GitHub free plan

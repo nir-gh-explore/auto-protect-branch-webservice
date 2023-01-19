@@ -23,8 +23,8 @@ Make sure the token scopes with the minimum required permissions (repo)
 - Copy the `Forwarding` url returned by ngrok for the next step. For example if the following is retuned by ngrok command:
 `Forwarding                    https://b5ca-175-39-127-114.au.ngrok.io -> http://localhost:5678` - copy the `https://b5ca-175-39-127-114.au.ngrok.io`
 - Create new [Webhook](https://docs.github.com/en/developers/webhooks-and-events/webhooks/about-webhooks) on the organisation level as follow:
-    - Payload URL: the url returned by ngrok
-    - Content type: change to: application/json
+    - Payload URL: the url returned by ngrok in the example above it would be: `https://b5ca-175-39-127-114.au.ngrok.io`
+    - Content type: change to: `application/json`
     - Secret: while it's a good practice to use a secret for security reasons to make sure github only is calling the webservice - this is currently not implemented, so for now leave this empty
     - SSL verification: Leave enabled
     - Events that should trigger the Webhook - select the following individual events:
